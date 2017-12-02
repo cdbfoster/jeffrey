@@ -51,6 +51,7 @@ fn main() {
     let mut event_queue = EventQueue::new(event_pump);
 
     'main: loop {
+        event_queue.update();
         for event in event_queue.iter() {
             match event {
                 &Event::Quit { .. } |

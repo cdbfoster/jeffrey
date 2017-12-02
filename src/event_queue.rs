@@ -35,6 +35,12 @@ impl EventQueue {
         }
     }
 
+    pub fn update(&mut self) {
+        for event in self.event_pump.poll_iter() {
+            self.events.push(event);
+        }
+    }
+
     pub fn len(&self) -> usize {
         self.events.len()
     }
